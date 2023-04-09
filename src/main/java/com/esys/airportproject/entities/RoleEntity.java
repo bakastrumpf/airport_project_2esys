@@ -8,9 +8,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
+@Table
 
 public class RoleEntity {
 
@@ -28,5 +31,39 @@ public class RoleEntity {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+
+	public RoleEntity(Integer id, String roleName, List<UserEntity> users) {
+		super();
+		this.id = id;
+		this.roleName = roleName;
+		this.users = users;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getRoleName() {
+		return roleName;
+	}
+
+	public void setRoleName(String roleName) {
+		this.roleName = roleName;
+	}
+
+	public List<UserEntity> getUsers() {
+		return users;
+	}
+
+	public void setUsers(List<UserEntity> users) {
+		this.users = users;
+	}
+
+	
+	
 
 }
